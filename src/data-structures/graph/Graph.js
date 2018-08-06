@@ -28,6 +28,7 @@ export default class Graph {
 
   /**
    * @param {GraphVertex} vertex
+   * @returns {GraphVertex[]}
    */
   getNeighbors(vertex) {
     return vertex.getNeighbors();
@@ -114,6 +115,11 @@ export default class Graph {
    */
   findEdge(startVertex, endVertex) {
     const vertex = this.getVertexByKey(startVertex.getKey());
+
+    if (!vertex) {
+      return null;
+    }
+
     return vertex.findEdge(endVertex);
   }
 

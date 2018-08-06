@@ -9,8 +9,8 @@ import {
 
 // Complexity constants.
 const SORTED_ARRAY_VISITING_COUNT = 20;
-const NOT_SORTED_ARRAY_VISITING_COUNT = 280;
-const REVERSE_SORTED_ARRAY_VISITING_COUNT = 400;
+const NOT_SORTED_ARRAY_VISITING_COUNT = 189;
+const REVERSE_SORTED_ARRAY_VISITING_COUNT = 209;
 const EQUAL_ARRAY_VISITING_COUNT = 20;
 
 describe('BubbleSort', () => {
@@ -24,6 +24,10 @@ describe('BubbleSort', () => {
 
   it('should do stable sorting', () => {
     SortTester.testSortStability(BubbleSort);
+  });
+
+  it('should sort negative numbers', () => {
+    SortTester.testNegativeNumbersSort(BubbleSort);
   });
 
   it('should visit EQUAL array element specified number of times', () => {

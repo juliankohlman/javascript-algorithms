@@ -1,11 +1,15 @@
 import Sort from '../Sort';
 
 export default class QuickSort extends Sort {
+  /**
+   * @param {*[]} originalArray
+   * @return {*[]}
+   */
   sort(originalArray) {
     // Clone original array to prevent it from modification.
-    const array = originalArray.slice(0);
+    const array = [...originalArray];
 
-    // If array has less then or equal to one elements then it is already sorted.
+    // If array has less than or equal to one elements then it is already sorted.
     if (array.length <= 1) {
       return array;
     }
@@ -27,7 +31,7 @@ export default class QuickSort extends Sort {
 
       if (this.comparator.equal(currentElement, pivotElement)) {
         centerArray.push(currentElement);
-      } else if (this.comparator.lessThen(currentElement, pivotElement)) {
+      } else if (this.comparator.lessThan(currentElement, pivotElement)) {
         leftArray.push(currentElement);
       } else {
         rightArray.push(currentElement);
